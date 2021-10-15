@@ -1,0 +1,411 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="row">
+
+    @foreach (var row in Model.Rows)
+    {
+        var x = Model.Rows.ElementAt(0);
+        <h2>
+            Testing json model
+            @row.Time
+            @row.five_m
+            @row.one_m
+            @x.Time
+        </h2>
+    }
+
+</div>
+<div class="row">
+    @{var y = Model.Rows.ElementAt(0);
+        var a = Model.Rows.ElementAt(1);}
+    <h2>
+
+        @y.Time
+        @y.five_m
+        @y.one_m
+
+    </h2>
+
+</div>
+
+
+<div class="row">
+
+    <div class="col-12 col-md-6">
+        <h2>Quick Analysis</h2>
+    </div>
+
+    <div class="col-md-6">
+        <h2>System Status</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Weighted Running Averages</h4>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="table-responsive">
+
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Time Windows</th>
+                        <th>1m</th>
+                        <th>5m</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var row in Model.Rows)
+                    {
+                        var x = Model.Rows.ElementAt(0);
+                        var x2 = Model.Rows.ElementAt(1);
+
+
+
+
+                        <tr>
+                            <td class="bg-info">@x.Time</td>
+                            <td class="bg-info">@x.five_m</td>
+                            <td class="bg-info">@x.one_m</td>
+
+                        </tr>
+
+                        <tr>
+                            <td class="bg-info">@x2.Time</td>
+                            <td class="bg-info">@x2.five_m</td>
+                            <td class="bg-info">@x2.one_m</td>
+
+                        </tr>
+
+
+                        <tr>
+                            <td>Moisture</td>
+                            <td class="bg-info">@x.five_m</td>
+                            <td>0.00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Ash</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Sulfur</td>
+                            <td class="info">0.00</td>
+                            <td>0.00</td>
+                        </tr>
+
+                        <tr>
+                            <td>BTU</td>
+                            <td class="info">0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>SO2</td>
+                            <td class="info">0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>K2O</td>
+                            <td class="info">0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>SiO2</td>
+                            <td class="info">0.00</td>
+                            <td>0.00</td>
+                        </tr>
+
+                        <tr>
+                            <td>Al2O3</td>
+                            <td class="info">0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Fe2O3</td>
+                            <td class="info">0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>CaO</td>
+                            <td class="info">0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>TiO2</td>
+                            <td class="info">0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>MAFBTU</td>
+                            <td class="info">0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>TPH</td>
+                            <td class="info">0.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr class="success">
+                            <td>Good Data Time</td>
+                            <td>0</td>
+                            <td class="text-primary">0</td>
+                        </tr>
+                        <tr>
+                            <td>Total Tons</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th colspan="2">Analyzer State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Analyzer Time(local)</td>
+                    <td class="bg-info">Date</td>
+
+                </tr>
+                <tr class="bg-success">
+                    <td>Analyzer Time (GMT)</td>
+                    <td>Date</td>
+
+                </tr>
+                <tr>
+                    <td>Detectors</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Tag Sample State</td>
+                    <td>Idle</td>
+                </tr>
+                <tr>
+                    <td>Current Analysis</td>
+                    <td>Ok</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th colspan="2">Detector1</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PMT Control Mode</td>
+                    <td class="info">fine_track</td>
+
+                </tr>
+                <tr class="success">
+                    <td>PMT Control State</td>
+                    <td>LOCKED</td>
+                </tr>
+                <tr>
+                    <td>Detector ID</td>
+                    <td>datad1</td>
+                </tr>
+                <tr>
+                    <td>Daemon Running</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Use Results</td>
+                    <td>Yes</td>
+                </tr>
+
+                <tr>
+                    <td>Analysis Response</td>
+                    <td>data</td>
+                </tr>
+                <tr>
+                    <td>Alygnment Response</td>
+                    <td>Data</td>
+                </tr>
+                <tr>
+                    <td>Analys CMD</td>
+                    <td>data</td>
+                </tr>
+
+                <tr>
+                    <td>Detector Temp</td>
+                    <td>40.0C</td>
+                </tr>
+                <tr>
+                    <td>Count Rate(raw)</td>
+                    <td>1,864,800 cpm</td>
+                </tr>
+                <tr>
+                    <td>Count Rate(aligned)</td>
+                    <td>1,869,740 cpm</td>
+                </tr>
+                <tr>
+                    <td>Aligned</td>
+                    <td>Aligned</td>
+                </tr>
+                <tr>
+                    <td>Good Data secs</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>H Peak FWHM</td>
+                    <td>5.35%</td>
+                </tr>
+                <tr>
+                    <td>H Peak Raw Channel</td>
+                    <td>97.288</td>
+                </tr>
+                <tr>
+                    <td>Alignment Gain</td>
+                    <td>5.35%</td>
+                </tr>
+                <tr>
+                    <td>Alignment Offset</td>
+                    <td>2.0979</td>
+                </tr>
+                <tr>
+                    <td>Alignment ChiSqr</td>
+                    <td>0.832</td>
+                </tr>
+                <tr>
+                    <td>Analysis ChiSqr</td>
+                    <td>0.907</td>
+                </tr>
+                <tr>
+                    <td>PMT Voltage Cmd</td>
+                    <td>691.000 V</td>
+                </tr>
+                <tr>
+                    <td>PMT Voltage ReadBack</td>
+                    <td>5.35%</td>
+                </tr>
+                <tr>
+                    <td>H Peak FWHM</td>
+                    <td>5.35%</td>
+                </tr>
+                <tr>
+                    <td>H Peak FWHM</td>
+                    <td>656 V</td>
+                </tr>
+                <tr>
+                    <td>Coarse DAC</td>
+                    <td>1,076</td>
+                </tr>
+                <tr>
+                    <td>Fine DAC</td>
+                    <td>1,846</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th colspan="2">PLC Subsystem Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PLCD Intsalled</td>
+                    <td>Yes</td>
+
+                </tr>
+                <tr class="success">
+                    <td>PLCD Running</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>PLCD State</td>
+                    <td>Current Status File</td>
+                </tr>
+                <tr>
+                    <td>Belt Speed</td>
+                    <td>0 fpm</td>
+                </tr>
+                <tr>
+                    <td>Use Results</td>
+                    <td>Yes</td>
+                </tr>
+
+                <tr>
+                    <td>Mass Flow</td>
+                    <td>0 tph</td>
+                </tr>
+
+            </tbody>
+
+            <thead>
+                <tr>
+                    <th colspan="2">System Parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>RAID Summary</td>
+                    <td>u0: OK</td>
+
+                </tr>
+                <tr>
+                    <td>RAID Details</td>
+                    <td>Data Table</td>
+                </tr>
+                <tr class="success">
+                    <td>Disk Usage</td>
+                    <td>Table Data</td>
+                </tr>
+                <tr>
+                    <td>PLCD State</td>
+                    <td>Current Status File</td>
+                </tr>
+                <tr>
+                    <td>PHP Version</td>
+                    <td>data</td>
+                </tr>
+                <tr>
+                    <td>OS Version</td>
+                    <td>Data</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th colspan="2">License Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>License File</td>
+                    <td>u0: OK</td>
+
+                </tr>
+                <tr>
+                    <td>End Date</td>
+                    <td>Date</td>
+                </tr>
+                <tr class="success">
+                    <td>Days Remaining</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>Server Type</td>
+                    <td>development</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

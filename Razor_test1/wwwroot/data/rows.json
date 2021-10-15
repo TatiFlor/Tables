@@ -1,0 +1,15 @@
+[
+  {
+    "Time_Windows": "Moisture",
+    "1m": 100,
+    "5m": 150
+
+  },
+  {
+    "Time_Windows": "K2O",
+    "1m": 200,
+    "5m": 2000
+
+  }
+
+]
